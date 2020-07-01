@@ -1,0 +1,59 @@
+
+<!-- 
+Raw HTML
+<div class="form-body">
+  <h2> Create new User! </h2>
+
+  <form action="/users" method="post" accept-charset="UTF-8">
+    <%#authenticity_token%>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <label for="username" class="block">Username</label>
+    <input type="text" name="user[username]" placeholder="Enter your user name...">
+    
+
+    <label for="email" class="block">Email</label>
+    <input type="text" name="user[email]" placeholder="Enter your Email...">
+
+    <label for="password" class="block">Password</label>
+    <input type="password" name="user[password]" placeholder="********">
+    
+    <label for="submit" class="block" ></label>
+    <input type="submit" value="Submit" id="submit">
+  </form>
+</div>
+-->
+
+<!--
+<% #Railsy! %>
+<%= form_tag('/users')%>
+
+<%= label_tag 'username', 'Username' %>
+<%= text_field_tag 'user[username]'%>
+
+<%= label_tag 'email', 'Email' %>
+<%= text_field_tag 'user[email]' %>
+
+<%= label_tag 'password', 'Password' %>
+<%= password_field_tag 'user[password]' %>
+
+<%= label_tag 'user', 'Submit' %>
+<%= submit_tag 'submit', id:"submit" %>
+-->
+
+<% #Railsy-er!%>
+
+<%= form_for @user do |f| %>
+
+  <%= f.label :username %>
+  <%= f.text_field :username %> <br/>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %> <br/>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %> <br/>
+
+  <%= f.label :username %>
+  <%= f.submit :submit %> <br/>
+<% end %>
